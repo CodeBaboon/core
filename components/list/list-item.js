@@ -178,7 +178,7 @@ class ListItem extends RtlMixin(LitElement) {
 		const lastBreakpointIndexToCheck = 3;
 		this.breakpoints.some((breakpoint, index) => {
 			if (width >= breakpoint || index > lastBreakpointIndexToCheck) {
-				this._breakpoint = lastBreakpointIndexToCheck - index - (lastBreakpointIndexToCheck - this.breakpoints.length + 1) * index;
+				this._breakpoint = (1 - index) * lastBreakpointIndexToCheck - this.breakpoints.length * index;
 				return true;
 			}
 		});
